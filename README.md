@@ -1,1 +1,68 @@
 # Multi-Signature-Wallet
+# 🏦 Soroban Multi-Signature Wallet
+
+## 📌 Project Description
+
+This project implements a **Multi-Signature Wallet** smart contract on the Stellar Soroban platform.  
+It allows a group of predefined owners to collectively manage funds, requiring a minimum number of approvals before executing any transaction.
+
+This enhances security by eliminating single points of failure and enforcing shared control over assets.
+
+---
+
+## ⚙️ What it does
+
+The contract enables:
+
+- Creation of a wallet with multiple owners
+- Submission of transactions (e.g., fund transfers)
+- Approval of transactions by owners
+- Execution of transactions only after reaching a predefined approval threshold
+
+---
+
+## 🚀 Features
+
+### 🔐 Multi-Owner Control
+- Wallet is controlled by multiple addresses
+- Only registered owners can approve transactions
+
+### ✅ Threshold-Based Approval
+- Transactions require a minimum number of approvals before execution
+- Threshold is configurable during initialization
+
+### 📤 Transaction Management
+- Submit new transactions
+- Approve pending transactions
+- Execute transactions once approved
+
+### 📜 On-Chain Transparency
+- All transactions and approvals are stored on-chain
+- Events are emitted for execution
+
+### ⚡ Lightweight & Efficient
+- Built using Soroban SDK
+- Optimized for minimal storage and compute usage
+
+---
+
+## 🧱 Smart Contract Functions
+
+| Function        | Description |
+|----------------|------------|
+| `initialize`   | Set owners and approval threshold |
+| `submit_tx`    | Create a new transaction |
+| `approve_tx`   | Approve a transaction |
+| `execute_tx`   | Execute a transaction after approvals |
+
+---
+
+## 🛠️ Tech Stack
+
+- **Rust**
+- **Soroban SDK**
+- **Stellar Blockchain**
+
+---
+
+## 🔗 Deployed Smart Contract Link
