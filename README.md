@@ -1,4 +1,3 @@
-# Multi-Signature-Wallet
 # 🏦 Soroban Multi-Signature Wallet
 
 ## 📌 Project Description
