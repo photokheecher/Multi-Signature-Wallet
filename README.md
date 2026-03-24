@@ -2,6 +2,7 @@
 # 🏦 Soroban Multi-Signature Wallet
 
 ## 📌 Project Description
+<img width="1446" height="907" alt="image" src="https://github.com/user-attachments/assets/bb4c8741-5ea6-4770-8205-dd70c52cc35a" />
 
 This project implements a **Multi-Signature Wallet** smart contract on the Stellar Soroban platform.  
 It allows a group of predefined owners to collectively manage funds, requiring a minimum number of approvals before executing any transaction.
@@ -66,3 +67,34 @@ The contract enables:
 ---
 
 ## 🔗 Deployed Smart Contract Link
+https://stellar.expert/explorer/testnet/contract/CBCWM2VQ7G4SIUTPIGQSSTHD6WS2TNVN5ZBK6I4S7U77AROL74CMMQDG
+
+---
+
+## 📦 Future Improvements
+
+- Add transaction cancellation
+- Support token transfers (not just XLM)
+- Add owner management (add/remove owners)
+- UI dashboard for transaction tracking
+- Gas optimization & batching
+
+---
+
+## 🧪 Testing
+
+To test locally:
+
+```bash
+soroban contract build
+soroban contract deploy \
+  --wasm target/wasm32-unknown-unknown/release/multisig.wasm \
+  --source <YOUR_ACCOUNT>
+  ```
+
+🤝 Contributing
+Pull requests and improvements are welcome! Feel free to fork and enhance the wallet with additional features.
+
+📄 License
+MIT License
+---
