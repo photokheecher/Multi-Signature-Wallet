@@ -3,6 +3,9 @@
 ## 📌 Project Description
 <img width="1446" height="907" alt="image" src="https://github.com/user-attachments/assets/bb4c8741-5ea6-4770-8205-dd70c52cc35a" />
 
+<img width="1446" height="829" alt="image" src="https://github.com/user-attachments/assets/94273060-c128-4247-8dcb-dbffcb1e8401" />
+
+
 This project implements a **Multi-Signature Wallet** smart contract on the Stellar Soroban platform.  
 It allows a group of predefined owners to collectively manage funds, requiring a minimum number of approvals before executing any transaction.
 
