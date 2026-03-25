@@ -77,22 +77,22 @@ export default function Home() {
 
           <h1 className="mb-3">
             <span className="block text-4xl sm:text-5xl font-bold tracking-tight leading-[1.1]">
-              <span className="text-white">Supply Chain </span>
-              <span className="bg-gradient-to-r from-[#7c6cf0] via-[#4fc3f7] to-[#7c6cf0] bg-[length:200%_auto] animate-gradient-shift bg-clip-text text-transparent">
-                on the Blockchain
+              <span className="text-white">Multi-Sig </span>
+              <span className="bg-gradient-to-r from-[#fbbf24] via-[#f97316] to-[#fbbf24] bg-[length:200%_auto] animate-gradient-shift bg-clip-text text-transparent">
+                Wallet
               </span>
             </span>
           </h1>
 
           <p className="mx-auto max-w-lg text-sm sm:text-base leading-relaxed text-white/40">
-            Register products, track shipments, and verify authenticity — immutably on Stellar.
+            Secure your assets with multi-party authorization. Require multiple approvals before any transaction executes.
           </p>
 
           {/* Inline stats */}
           <div className="mt-6 flex items-center justify-center gap-6 sm:gap-10 animate-fade-in-up-delayed">
             {[
-              { label: "Finality", value: "~5s" },
-              { label: "Cost", value: "<$0.01" },
+              { label: "Owners", value: "2+" },
+              { label: "Threshold", value: "Config" },
               { label: "Network", value: "Testnet" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
@@ -112,23 +112,25 @@ export default function Home() {
 
         {/* Footer */}
         <div className="mt-10 flex flex-col items-center gap-4 animate-fade-in">
-          {/* Supply chain flow */}
+          {/* Multi-sig flow */}
           <div className="flex items-center gap-3 text-xs text-white/20">
-            {["Created", "Shipped", "Delivered"].map((step, i) => (
+            {["Setup", "Submit", "Approve", "Execute"].map((step, i) => (
               <span key={step} className="flex items-center gap-3">
                 <span className="flex items-center gap-1.5">
                   <span
                     className={`h-1.5 w-1.5 rounded-full ${
                       i === 0
-                        ? "bg-[#fbbf24]/50"
+                        ? "bg-[#7c6cf0]/50"
                         : i === 1
                           ? "bg-[#4fc3f7]/50"
-                          : "bg-[#34d399]/50"
+                          : i === 2
+                            ? "bg-[#34d399]/50"
+                            : "bg-[#fbbf24]/50"
                     }`}
                   />
                   <span className="font-mono">{step}</span>
                 </span>
-                {i < 2 && (
+                {i < 3 && (
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-white/10">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>

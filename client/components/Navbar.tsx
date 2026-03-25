@@ -91,18 +91,15 @@ export default function Navbar({
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#7c6cf0] to-[#4fc3f7] shadow-[0_0_20px_rgba(124,108,240,0.3)]">
+          <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#fbbf24] to-[#f97316] shadow-[0_0_20px_rgba(251,191,36,0.3)]">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
-              <path d="M15 18H9" />
-              <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
-              <circle cx="17" cy="18" r="2" />
-              <circle cx="7" cy="18" r="2" />
+              <path d="m21 2-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0 3 3L22 7l-3-3m-3.5 3.5L19 4" />
+              <path d="M12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
             </svg>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-base font-semibold tracking-tight text-white">
-              SupplyTrack
+              MultiSig Wallet
             </span>
             <span className="hidden sm:inline-block text-[10px] font-mono text-white/20 border border-white/[0.06] rounded px-1.5 py-0.5">
               v1.0
@@ -123,7 +120,7 @@ export default function Navbar({
                 onClick={(e) => { e.stopPropagation(); setShowDropdown(!showDropdown); }}
                 className="flex items-center gap-2.5 rounded-xl border border-white/[0.08] bg-white/[0.04] px-3 py-2 text-sm transition-all hover:border-white/[0.15] hover:bg-white/[0.06]"
               >
-                <div className="h-6 w-6 rounded-full bg-gradient-to-br from-[#7c6cf0] to-[#4fc3f7] p-[1.5px]">
+                <div className="h-6 w-6 rounded-full bg-gradient-to-br from-[#fbbf24] to-[#f97316] p-[1.5px]">
                   <div className="flex h-full w-full items-center justify-center rounded-full bg-[#0a0a1a] text-[8px] font-bold text-white/80">
                     {walletAddress.slice(0, 2)}
                   </div>
@@ -176,7 +173,7 @@ export default function Navbar({
             <button
               onClick={onConnect}
               disabled={isConnecting}
-              className="relative overflow-hidden rounded-xl bg-gradient-to-r from-[#7c6cf0] to-[#5b8cf0] p-[1px] transition-all hover:shadow-[0_0_25px_rgba(124,108,240,0.25)] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
+              className="relative overflow-hidden rounded-xl bg-gradient-to-r from-[#fbbf24] to-[#f97316] p-[1px] transition-all hover:shadow-[0_0_25px_rgba(251,191,36,0.25)] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <div className="flex items-center gap-2 rounded-[11px] bg-[#0c0c1d]/90 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
                 {isConnecting ? (

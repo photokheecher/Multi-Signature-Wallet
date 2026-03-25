@@ -26,7 +26,7 @@ import {
 
 /** Your deployed Soroban contract ID */
 export const CONTRACT_ADDRESS =
-  "CDJVMAX34YRCQ5JFC6SIOQOVSUY6XWEFYJOLF3SBCKU7CMI3IAP6HPWN";
+  "CCSZEOSHPH67F2IXI2M6EDARBY6IEMU75H3XLDGJ45IRSGFWB2OZPHSW";
 
 /** Network passphrase (testnet by default) */
 export const NETWORK_PASSPHRASE = Networks.TESTNET;
@@ -209,6 +209,89 @@ export function toScValAddress(address: string): xdr.ScVal {
 
 export function toScValBool(value: boolean): xdr.ScVal {
   return nativeToScVal(value, { type: "bool" });
+}
+
+export function toScValU64(value: number): xdr.ScVal {
+  return nativeToScVal(value, { type: "u64" });
+}
+
+export function toScValI64(value: bigint): xdr.ScVal {
+  return nativeToScVal(value, { type: "i64" });
+}
+
+// ============================================================
+// MultiSig Wallet — Contract Methods
+// ============================================================
+
+/**
+ * Initialize the multi-sig wallet with owners and threshold.
+ * Calls: initialize(owners: Vec<Address>, threshold: u32)
+ */
+export async function initializeWallet(
+  caller: string,
+  owners: string[],
+  threshold: number
+) {
+  const ownersScVal = nativeToScVal(owners.map((o) => new Address(o).toScVal()), {
+    type: "vec",
+  });
+  return callContract(
+    "initialize",
+    [ownersScVal, toScValU32(threshold)],
+    caller,
+    true
+  );
+}
+
+/**
+ * Submit a new transaction.
+ * Calls: submit_tx(to: Address, amount: i128) -> u32
+ * Returns: transaction ID
+ */
+export async function submitTransaction(
+  caller: string,
+  to: string,
+  amount: bigint
+) {
+  return callContract(
+    "submit_tx",
+    [toScValAddress(to), toScValI128(amount)],
+    caller,
+    true
+  );
+}
+
+/**
+ * Approve a transaction.
+ * Calls: approve_tx(tx_id: u32, approver: Address)
+ */
+export async function approveTransaction(
+  caller: string,
+  txId: number,
+  approver: string
+) {
+  return callContract(
+    "approve_tx",
+    [toScValU32(txId), toScValAddress(approver)],
+    caller,
+    true
+  );
+}
+
+/**
+ * Execute a transaction (requires threshold approvals).
+ * Calls: execute_tx(tx_id: u32)
+ */
+export async function executeTransaction(
+  caller: string,
+  txId: number
+) {
+  return callContract(
+    "execute_tx",
+    [toScValU32(txId)],
+    caller,
+    true
+  );
 }
 
 // ============================================================
